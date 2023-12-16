@@ -1,0 +1,91 @@
+.main {
+  @apply py-2 px-8 flex flex-col gap-4;
+}
+
+.channel {
+  --icon-size: 5rem;
+  --banner-width: calc(calc(60 / 100) * var(--main-width));
+
+  @apply grid items-center justify-items-center;
+
+  grid-template-columns: var(--icon-size) 1fr auto;
+  grid-template-areas:
+    "icon name banner"
+    "icon action banner"
+    "icon action banner";
+  width: 100%;
+  height: fit-content;
+}
+
+.channel > .channel_banner {
+  @apply relative overflow-hidden rounded-lg shadow-md;
+
+  grid-area: banner;
+  width: var(--banner-width);
+  height: 14.8vh;
+  box-shadow: 0px 2px 15px -3px rgba(var(--foreground-rgb), 0.1);
+}
+
+.channel > .channel_banner > img {
+  object-fit: cover;
+}
+
+.channel > .channel_icon {
+  @apply relative overflow-hidden rounded-full shadow-md;
+
+  grid-area: icon;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  box-shadow: 0px 2px 15px -3px rgba(var(--foreground-rgb), 0.1);
+}
+
+.channel > h1 {
+  @apply px-4 text-2xl;
+
+  grid-area: name;
+}
+.channel > .channel_action {
+  @apply bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded;
+  grid-area: action;
+}
+
+.channel_nav {
+  @apply flex gap-8;
+
+  width: 100%;
+}
+.channel_nav > a {
+  @apply border-b-2 flex items-center justify-center text-lg;
+
+  flex: 1;
+  border-color: rgba(var(--foreground-rgb), 1);
+}
+
+.channel_nav > a:focus-visible {
+  @apply border-red-300 text-red-300;
+
+  outline: none;
+}
+.channel_nav > a.active {
+  @apply border-red-600;
+}
+
+@media screen and (width <=600px) {
+  .channel {
+    --icon-size: 4rem;
+    --banner-width: calc(calc(80 / 100) * var(--main-width));
+
+    @apply gap-4;
+
+    grid-template-columns: var(--icon-size) 1fr auto;
+    grid-template-areas:
+      "banner banner banner"
+      "icon name name"
+      "action action action";
+    width: 100%;
+  }
+  .channel > .channel_action {
+    @apply flex items-center justify-center;
+    width: 100%;
+  }
+}
