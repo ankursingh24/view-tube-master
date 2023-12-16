@@ -7,8 +7,8 @@ function Header() {
   return (
     <header>
       <div className="logo_area">
-        <button title="ViewTube Home" className="logo">
-          <Image src="/home-bg.png" alt="view tube" fill sizes="100%" />
+        <button title="YTube Home" className="logo">
+          <Image src="/home-bg.png" alt="Y tube" fill sizes="100%" />
         </button>
       </div>
       <div className="search_area">
@@ -23,7 +23,7 @@ function Header() {
           <BellIcon />
         </button>
         <div title="User" className="user_icon">
-          <Image src="/Shape=Round.png" alt="user" fill sizes="100%" />
+          <Image src="/Shape=Round.jpeg" alt="user" fill sizes="100%" />
         </div>
       </div>
     </header>

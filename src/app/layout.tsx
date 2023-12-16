@@ -7,8 +7,8 @@ import NavBar from "@/components/NavBar/NavBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "View Tube",
-  description: "Youtube but Better?!",
+  title: "Y Tube",
+  description: "YT but Better!",
 };
 
 export default function RootLayout({

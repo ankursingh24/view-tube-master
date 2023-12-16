@@ -8,7 +8,7 @@ header {
   height: var(--header-height);
 }
 header > .logo_area {
-  @apply flex items-center;
+  @apply flex items-center overflow-hidden rounded-full;
   flex: 0.3;
 }
 header > .logo_area > .logo {
